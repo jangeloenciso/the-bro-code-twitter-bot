@@ -20,16 +20,15 @@ i = 0
 
 def reply_to_tweets():
     for mention in mentions:
-        print(mention.text)
         for i in reversed(range(151)):
             if str(i) in mention.text:
-                print(articles[i])
                 api.update_status('@' + mention.user.screen_name + " " + articles[i], mention.id)
                 break
 
 while True:
+    print('Retrieving tweets')
     reply_to_tweets()
-    time.sleep(5)
+    time.sleep(15)
  
 
 # for mention in mentions:
