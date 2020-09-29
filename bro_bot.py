@@ -1,12 +1,14 @@
 import tweepy
 import time
+import os
+from os import environ
 from keys import keys
 from bro_articles import articles
 
-CONSUMER_KEY = keys['consumer_key']
-CONSUMER_SECRET = keys['consumer_secret']
-ACCESS_TOKEN = keys['access_token']
-ACCESS_TOKEN_SECRET = keys['access_token_secret']
+CONSUMER_KEY = environ[CONSUMER_KEY]
+CONSUMER_SECRET = environ[CONSUMER_SECRET]
+ACCESS_TOKEN = environ[ACCESS_TOKEN]
+ACCESS_TOKEN_SECRET = environ[ACCESS_TOKEN_SECRET]
 
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)

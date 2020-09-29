@@ -1,0 +1,1 @@
+worker: python bro_bot.py
