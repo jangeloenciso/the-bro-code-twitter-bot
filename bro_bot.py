@@ -2,7 +2,6 @@ import tweepy
 import time
 import os
 from os import environ
-from keys import keys
 from bro_articles import articles
 
 CONSUMER_KEY = environ[CONSUMER_KEY]
