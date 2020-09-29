@@ -1,4 +1,5 @@
 import tweepy
+import time
 from keys import keys
 from bro_articles import articles
 
@@ -19,16 +20,16 @@ i = 0
 def reply_to_tweets():
     for mention in mentions:
         print(mention.text)
-        for i in range(151):
+        for i in reversed(range(151)):
             if str(i) in mention.text:
                 print(articles[i])
                 api.update_status('@' + mention.user.screen_name + " " + articles[i], mention.id)
+                break
 
 while True:
     reply_to_tweets()
-    time.sleep(15)
+    time.sleep(5)
  
-
 
 # for mention in mentions:
     # for mention in reversed(mentions):
