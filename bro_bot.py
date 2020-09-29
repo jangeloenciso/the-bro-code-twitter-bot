@@ -26,7 +26,7 @@ def reply_to_tweets():
                 break
 
 while True:
-    print('Retrieving tweets...')
+    print('Running...')
     reply_to_tweets()
     time.sleep(15)
  
