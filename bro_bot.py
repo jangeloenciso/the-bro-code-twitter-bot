@@ -31,10 +31,6 @@ def store_last_seen_id(last_seen_id, file_name):
     f_write.close()
     return
 
-
-i = 0
-
-
 def reply_to_tweets():
     print('retrieving and replying to tweets...', flush=True)
     last_seen_id = retrieve_last_seen_id(FILE_NAME)
@@ -50,8 +46,8 @@ def reply_to_tweets():
                     api.update_status(
                         '@' + mention.user.screen_name + " " + articles[i], mention.id)
                     break
-                # except tweepy.TweepError:
-                #     print("error")
+                except tweepy.TweepError:
+                    print("error")
 
 
 while True:
